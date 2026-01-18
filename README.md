@@ -5,13 +5,13 @@ A full-stack DevOps showcase demonstrating a robust, production-ready workflow f
 <div align="center">
 
 <a href="http://Docker-react-env.eba-apmapbsr.us-east-1.elasticbeanstalk.com">
-  <img src="imgs/button_live_demo.png" alt="Live Demo" width="150">
+  <img src="https://img.shields.io/badge/Live%20Demo-AWS%20Elastic%20Beanstalk-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Live Demo">
 </a>
 <a href="https://github.com/vikas9dev/docker-react/actions">
-  <img src="imgs/button_pipeline.png" alt="CI/CD Pipeline" width="150">
+  <img src="https://img.shields.io/badge/CI%2FCD%20Pipeline-GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="CI/CD Pipeline">
 </a>
 <a href="https://hub.docker.com/repository/docker/vikas9dev/docker-react/general">
-  <img src="imgs/button_docker_hub.png" alt="Docker Hub" width="150">
+  <img src="https://img.shields.io/badge/Docker%20Hub-Repository-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub">
 </a>
 
 ---
