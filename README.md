@@ -82,6 +82,7 @@ graph TD
 
 ### ☁️ AWS Cloud Infrastructure
 *   **Elastic Beanstalk (PaaS)**: Configured a managed environment using the Amazon Linux 2 platform.
+*   **Pre-built Deployment**: Implemented a `Dockerrun.aws.json` manifest to trigger remote image pulls, avoiding resource-heavy builds on the target instance.
 *   **IAM Management**: Implemented "Principle of Least Privilege" using specific IAM roles for EC2 instances and Beanstalk services.
 *   **S3 & Networking**: Managed application versioning via S3 and configured port mapping (EXPOSE 80) for Nginx proxying.
 
