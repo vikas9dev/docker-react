@@ -108,10 +108,22 @@ docker run -e CI=true react-tests npm run test
 
 ## 🔧 Environment Variables & Configuration
 The CI/CD pipeline requires the following GitHub Repository Secrets:
-*   `DOCKER_HUB_USERNAME`
-*   `DOCKER_HUB_ACCESS_TOKEN`
-*   `AWS_ACCESS_KEY_ID`
-*   `AWS_SECRET_ACCESS_KEY`
+*   `DOCKER_HUB_USERNAME` / `DOCKER_HUB_ACCESS_TOKEN`
+*   `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`
+
+---
+
+## ☁️ Infrastructure & Deployment Detail
+
+To achieve a production-grade automated deployment, the following AWS infrastructure was manually provisioned and configured:
+
+1.  **IAM Security**:
+    *   **EC2 Instance Profile**: Assigned `AWSElasticBeanstalkWebTier` and `AWSElasticBeanstalkMulticontainerDocker` policies to allow instances to communicate with the EB service.
+    *   **Service Role**: Created a dedicated `aws-elasticbeanstalk-service-role` for environment management and load balancing.
+2.  **S3 Storage**:
+    *   Enabled **ACLs** and set **Object Ownership** to "Bucket owner preferred" on the Elastic Beanstalk S3 bucket to ensure deployment packages are accessible by the EC2 instances.
+3.  **Deployment Manifest**:
+    *   Utilized `Dockerrun.aws.json` (v1) to abstract the deployment from the raw source code. This allows Elastic Beanstalk to pull the pre-built image directly from Docker Hub, minimizing resource usage on the host instance.
 
 ---
 
