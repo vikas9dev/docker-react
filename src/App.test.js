@@ -9,6 +9,6 @@ test('renders view pipeline source link', () => {
 
 test('renders devops ship with confidence title', () => {
   render(<App />);
-  const titleElement = screen.getByText(/devops/i);
+  const titleElement = screen.getByText(/ship with confidence/i);
   expect(titleElement).toBeInTheDocument();
 });
