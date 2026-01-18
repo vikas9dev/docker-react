@@ -37,6 +37,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # We must exclude development files like docker-compose and Dockerfile.dev
+      # Otherwise, Elastic Beanstalk might try to use them instead of our production Dockerfile!
       - name: Generate Deployment Package
         run: zip -r deploy.zip . -x '*.git*' -x 'docker-compose*' -x 'Dockerfile.dev'
 
