@@ -1,4 +1,4 @@
-# Production-Grade React CI/CD Pipeline 🚀
+# Automated React CI/CD Pipeline 🚀
 
 A full-stack DevOps showcase demonstrating a robust, production-ready workflow for a React application. This project bridges the gap between local development and cloud-scale deployment using industry-standard tools.
 
@@ -115,7 +115,7 @@ The CI/CD pipeline requires the following GitHub Repository Secrets:
 
 ## ☁️ Infrastructure & Deployment Detail
 
-To achieve a production-grade automated deployment, the following AWS infrastructure was manually provisioned and configured:
+To achieve a robust, automated deployment, the following AWS infrastructure was manually provisioned and configured:
 
 1.  **IAM Security**:
     *   **EC2 Instance Profile**: Assigned `AWSElasticBeanstalkWebTier` and `AWSElasticBeanstalkMulticontainerDocker` policies to allow instances to communicate with the EB service.
