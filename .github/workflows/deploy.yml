@@ -12,7 +12,20 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build Test Image
-        run: docker build -t vikas9dev/frontend:latest -f Dockerfile.dev .
+        run: docker build -t vikas9dev/docker-react -f Dockerfile.dev .
 
       - name: Run Tests
-        run: docker run -e CI=true vikas9dev/frontend npm run test -- --coverage
+        run: docker run -e CI=true vikas9dev/docker-react npm run test -- --coverage
+
+      - name: Login to Docker Hub
+        if: github.ref == 'refs/heads/main'
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      
+      - name: Build and Push Production Docker Image
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker build -t vikas9dev/docker-react -f Dockerfile .
+          docker push vikas9dev/docker-react
